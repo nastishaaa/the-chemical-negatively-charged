@@ -1,0 +1,56 @@
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.label{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #000;
+    
+}
+
+.field{
+    box-sizing: border-box;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 14px 20px;
+    width: 350px;
+    background: #e0e0e0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.57143;
+    color: #172234;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+.forgotPass{
+    margin-top: -10px;
+    margin-left: 240px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.57143;
+    color: #b29f7e;
+}
+
+.signInBtn{
+    width: 350px;
+    height: 44px;
+    background: #b29f7e;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.375;
+    text-align: center;
+    color: #fff;
+}
+
+.signInBtn:hover{
+    background: #a1855f;
+    color: #fff;
+}

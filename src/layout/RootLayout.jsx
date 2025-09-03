@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header/Header";
+import Loader from '../components/Loader/Loader';
 
 export default function RootLayout() {
     const style = {
@@ -17,7 +18,7 @@ export default function RootLayout() {
             <div style={style}>
                 <Header />
                 <main style={mainContentStyle}>
-                    <Suspense fallback={<h3>Loading...</h3>}>
+                    <Suspense fallback={<Loader />}>
                         <Outlet />
                     </Suspense>
                 </main>

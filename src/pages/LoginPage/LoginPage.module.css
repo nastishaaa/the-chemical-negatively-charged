@@ -1,0 +1,84 @@
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.backgroundImg{
+    width: 890px;
+    height: 943px;
+}
+
+.formPart{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin: 0 auto;
+}
+
+.formContainer{
+    width: 350px;
+    height: auto;
+}
+
+.loginTitle{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.21429;
+    color: #172234;
+}
+
+.textAccount, .signupLink{
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.57143;
+    text-align: center;
+    color: #172234;
+}
+
+.signupLink{
+    color: #b29f7e;
+}
+
+@media (max-width: 1200px) {
+    .mainContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .backgroundImg {
+        width: 100%;
+        height: auto;
+    }
+
+    .formContainer {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .backgroundImg {
+        display: none;
+    }
+
+    .mainContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .formContainer {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .loginTitle {
+        font-size: 22px;
+    }
+
+    .textAccount,
+    .signupLink {
+        font-size: 12px;
+    }
+}
