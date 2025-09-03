@@ -26,6 +26,7 @@
     color: #172234;
     opacity: 0.5;
     margin-bottom: 20px;
+    font-family: "Lato", sans-serif;
 }
 
 .forgotPass{
@@ -36,6 +37,9 @@
     font-size: 14px;
     line-height: 1.57143;
     color: #b29f7e;
+    font-family: "Lato", sans-serif;
+    width: 110px;
+    white-space: nowrap;
 }
 
 .signInBtn{

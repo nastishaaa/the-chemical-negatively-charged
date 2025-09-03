@@ -70,6 +70,8 @@
 @media (max-width: 768px) {
     .apartItem {
         flex: 1 1 100%;
+        width: 280px;
+        height: auto;
     }
 
     .cardTitle {

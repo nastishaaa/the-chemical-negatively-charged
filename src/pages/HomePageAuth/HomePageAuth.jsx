@@ -1,38 +1,48 @@
-import s from './HomePageAuth.module.css'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import s from './HomePageAuth.module.css';
 
 import Card1 from '../../assets/Card1.png';
 import Card2 from '../../assets/Card2.png';
 import Card3 from '../../assets/Card3.png';
 import Card4 from '../../assets/Card4.png';
+import { selectAparts, selectIsLoading } from '../../redux/apartments/selectors';
+import { getAaparts } from '../../redux/apartments/operations';
+import Loader from '../../components/Loader/Loader';
 
-const content = [
-    { id: 1, card: Card1, title: 'The Marina Torch', list: ['6 500 000 Dhs', 'Yield 9.25%', 'Sold 75%', 'Tiket - 60 000 Dhs', 'Days left 150 '] },
-    { id: 2, card: Card2, title: 'HHHR Tower', list: ['6 500 000 Dhs', 'Yield 9.25%', 'Sold 75%', 'Tiket - 60 000 Dhs', 'Days left 150 '] },
-    { id: 3, card: Card3, title: 'Ocean peaks', list: ['6 500 000 Dhs', 'Yield 9.25%', 'Sold 75%', 'Tiket - 60 000 Dhs', 'Days left 150 '] },
-    { id: 4, card: Card1, title: 'Al Yaqoub Tower', list: ['6 500 000 Dhs', 'Yield 9.25%', 'Sold 75%', 'Tiket - 60 000 Dhs', 'Days left 150 '] }
-    
-]
+const images = [Card1, Card2, Card3, Card4];
 
 export default function HomePageAuth() {
+    const dispatch = useDispatch();
+    const aparts = useSelector(selectAparts);
+    const isLoading = useSelector(selectIsLoading);
+
+    useEffect(() => {
+        dispatch(getAaparts());
+    }, [dispatch]);
+
     return (
         <div className={s.mainContainer}>
+            {isLoading ? <Loader /> :
             <ul className={s.apartList}>
-                {content.map(item => (
-                    <li key={item.id}
-                        style={{ backgroundImage: `url(${item.card})` }}
-                        className={s.apartItem}>
+                {aparts.map((apart, index) => (
+                    <li
+                        key={apart._id}
+                        style={{ backgroundImage: `url(${images[index % images.length]})` }} 
+                        className={s.apartItem}
+                    >
                         <div className={s.textContent}>
-                            <h3 className={s.cardTitle}>{ item.title}</h3>
+                            <h3 className={s.cardTitle}>{apart.title}</h3>
                             <ul className={s.featuresList}>
-                                {item.list.map(i => (
-                                    <li className={s.featuresItem} key={item.id}>{i }</li>
+                                {apart.features.map((feature, idx) => (
+                                    <li className={s.featuresItem} key={idx}>{feature}</li>
                                 ))}
                             </ul>
                         </div>
-                        
                     </li>
                 ))}
             </ul>
+            }
         </div>
     );
 }

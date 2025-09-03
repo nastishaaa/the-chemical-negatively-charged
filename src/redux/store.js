@@ -2,6 +2,7 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import authReducer from "./auth/slice";
+import apartmentsReducer from './apartments/slice';
 
 const authPersistConfig = {
     key: 'auth',
@@ -11,7 +12,7 @@ const authPersistConfig = {
 
 const rootReducer = combineReducers({
     auth: persistReducer(authPersistConfig, authReducer),
-    //apartments: apartmentsReducer
+    apartments: apartmentsReducer,
 });
 
 export const store = configureStore({
