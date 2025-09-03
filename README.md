@@ -1,12 +1,67 @@
-# React + Vite
+# The Chemical Negatively Charged App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Main Page:** The chemical negatively charged
 
-Currently, two official plugins are available:
+> Numerous calculations predict, and experiments confirm, that the force field reflects the beam, while the mass defect is not formed. The chemical compound is negatively charged. Meanwhile, the mass defect is...
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠 Project Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This is a **test project** demonstrating:
+
+- **User Authentication** (Registration & Login)
+- **Fetching main data** (list of chemical compounds / apartments)
+- **Dynamic rendering of content** in a modern React frontend
+- Integration with a **backend API** using **Express + MongoDB**
+
+This project was created to showcase:
+
+- **Secure authentication flows**
+- **API consumption** and state management with Redux Toolkit
+- **Responsive UI** using React and CSS modules
+
+---
+
+## 🚀 Features
+
+### Authentication
+
+- Register a new user
+- Login with existing user
+- Logout securely
+- Persistent login state using `redux-persist`
+
+### Main Data
+
+- Fetch data from backend API (`/aparts`)
+- Display dynamic cards with compound/apartment information
+- Loader animation while data is being fetched
+- Error handling and notifications
+
+### Frontend Tech Stack
+
+- React 18 + Hooks
+- Redux Toolkit for state management
+- React Router for routing
+- Formik + Yup for forms & validation
+- react-hot-toast for notifications
+
+### Backend Tech Stack
+
+- Node.js + Express
+- MongoDB / Mongoose
+- JWT for authentication
+- Cors + Cookie-parser
+
+---
+
+### ⚡ Usage
+
+- Register a new user
+
+- Login to access the protected main page
+
+- View the dynamically loaded cards (chemical compounds / apartments)
+
+- Logout using the button in the header
